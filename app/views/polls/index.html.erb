@@ -1,0 +1,17 @@
+<div class = "container">
+<%= line_chart @poll.group(:vote).count %>
+
+<%= bar_chart @poll.group(:vote).count %>
+
+<%= column_chart @poll.group(:vote).count %>
+  <%= pie_chart @poll.group(:vote).count %>
+  <% @poll.each do |poll| %>
+    <div class="well">
+      <h2><%= poll.vote %></h2>
+      <div class="btn-group">
+        <%= link_to 'Edit', edit_poll_path(poll), class: 'btn btn-default' %>
+        <%= button_to 'remove' , poll_path(poll.id), method: 'delete', class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
+      </div>
+  </div>
+  <% end %>
+</div>

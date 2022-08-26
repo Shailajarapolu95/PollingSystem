@@ -1,0 +1,9 @@
+<div class= "container">
+  <%= form_for @poll do |f| %>
+  <div class="form-group">
+    <%= f.label :Question %>
+    <%= f.text_area :vote, rows: 3, required: true, class: 'form-control' %>
+  </div>
+  <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
+  <% end %>
+</div>

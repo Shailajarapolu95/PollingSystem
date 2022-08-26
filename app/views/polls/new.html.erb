@@ -1,0 +1,18 @@
+<div class ="container">
+  <div class="form-group">
+  <%= form_with model: @poll do |form|%>
+    <h3><strong><%= form.label :Which_is_your_favourite_pet_? %></strong></h3></br>
+    <%= form.radio_button :vote, "Dog" %>
+    <%= form.label :vote_dog, "Dog" %><br></br>
+    <%= form.radio_button :vote, "Cat" %>
+    <%= form.label :vote_cat, "Cat" %><br></br>
+    <%= form.radio_button :vote, "Squirrel" %>
+    <%= form.label :vote_squirrel, "Squirrel" %><br></br>
+    <%= form.radio_button :vote, "None of the above" %>
+    <%= form.label :vote_nothing, "None of the above" %><br></br>
+    <div class="form-group">
+      <%= form.submit class:"btn-primary gradient-custom-2 mb-3" %>
+    </div>
+  </div>
+  <% end %>
+</div>
